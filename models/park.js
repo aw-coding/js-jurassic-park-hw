@@ -1,7 +1,7 @@
 const Park = function (name, ticketPrice, collection){
     this.name = name
     this.ticketPrice = ticketPrice
-    this.colletion = collection
+    this.collection = collection
 
 }
 

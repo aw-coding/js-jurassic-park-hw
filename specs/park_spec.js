@@ -6,8 +6,9 @@ describe('Park', function() {
 
   beforeEach(function () {
     tRex = new Dinosaur('t-rex', 'carnivore', 50);
+    raptor = new Dinosaur('Raptor', 'carnivore', 20)
     compy = new Dinosaur ('Compy', 'omnivore', 5)
-    park = new Park('Jurassic Park', 12.5, [compy])
+    park = new Park('Jurassic Park', 12.5, [compy, raptor])
 
 
   });
@@ -24,16 +25,20 @@ describe('Park', function() {
 
   it('should have a collection of dinosaurs', function(){
     const actual = park.collection;
-    assert.deepEqual(actual, [compy])    //is this correct?
+    assert.deepEqual(actual, [compy, raptor])    //is this correct?
   });
 
   it('should be able to add a dinosaur to its collection', function (){
     park.addDinosaur(tRex);
     const actual = park.collection;
-    assert.deepStrictEqual(actual, [compy, tRex])
+    assert.deepStrictEqual(actual, [compy,raptor, tRex])
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function () {
+    park.removeDinosaur(raptor);
+    const actual = park.collection;
+    assert.deepStrictEqual(actual, [compy])
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 

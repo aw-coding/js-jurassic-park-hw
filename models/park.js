@@ -9,4 +9,9 @@ Park.prototype.addDinosaur = function (dinosaur) {
     this.collection.push(dinosaur);
 }
 
+Park.prototype.removeDinosaur = function (dinosaur) {
+    this.collection.pop(dinosaur);
+
+}
+
 module.exports = Park;
